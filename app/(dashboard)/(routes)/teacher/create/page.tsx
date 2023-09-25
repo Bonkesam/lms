@@ -39,7 +39,7 @@ const CreatePage = () => {
         },
     });
 
-    const { isSubmitting, isvalid } = form.formState;
+    const { isSubmitting, isValid } = form.formState;
 
     const onsubmit = async (values: z.infer<typeof formschema>) => {
         try {
@@ -92,7 +92,7 @@ const CreatePage = () => {
                     </Link>
                     <Button 
                         type="submit"
-                        disabled={!isvalid || !isSubmitting }
+                        disabled={!isValid || !isSubmitting }
                     >
                         Continue
                     </Button>
