@@ -5,8 +5,8 @@ export const Logo = () => {
   return (
     <div>
       <Image 
-        height={130}
-        width={130}
+        height={65}
+        width={65}
         alt="Logo"
         src="/logo.svg"
       />
