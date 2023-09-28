@@ -4,6 +4,7 @@ import { auth } from '@clerk/nextjs';
 import { redirect } from 'next/navigation';
 import { LayoutDashboard } from 'lucide-react';
 import { IconBadge } from "@/components/icon-badge"
+import { TitleForm } from './_components/title-form';
 
 const CourseIdPage = async ({
     params
