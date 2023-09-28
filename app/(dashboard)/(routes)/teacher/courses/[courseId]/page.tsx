@@ -55,6 +55,10 @@ const CourseIdPage = async ({
                 <IconBadge size="sm" icon={LayoutDashboard} />
                 <h2 className='text-xl'>Customize your Course</h2>
             </div>
+            <TitleForm 
+                initialData={course}
+                courseId={course.id}
+            />
         </div>
       </div>
     </div>
