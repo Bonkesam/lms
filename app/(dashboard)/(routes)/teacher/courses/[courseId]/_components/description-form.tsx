@@ -17,6 +17,7 @@ import { Pencil } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 interface DescriptionFormprops {
     initialData: {
@@ -62,21 +63,21 @@ export const DescriptionForm = ({
     return (
         <div className="mt-6 border bg-slate-100 rounded-md p-4">
             <div className="font-medium flex items-center justify-between">
-                Course title
+                Course Description
                 <Button variant="ghost" onClick={toggleEdit}>
                     {isEditing ? (
                         <>Cancel</>
                     ) : (                    
                         <>
                             <Pencil className="h-4 w-4 mr-2" />
-                            Edit title
+                            Edit description
                         </>                        
                     )}
                     
                 </Button>
             </div>
             {!isEditing && (
-                <p>
+                <p className={cn("text-sm mt-2", !initialData.description && "text-slate-500 italic")}>
                     {initialData?.description ?? 'No title provided'}
                 </p>
             )}

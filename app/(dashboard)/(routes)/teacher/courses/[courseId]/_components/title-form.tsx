@@ -76,7 +76,7 @@ export const TitleForm = ({
                 </Button>
             </div>
             {!isEditing && (
-                <p>
+                <p className="text-sm mt-2">
                     {initialData?.title ?? 'No title provided'}
                 </p>
             )}
