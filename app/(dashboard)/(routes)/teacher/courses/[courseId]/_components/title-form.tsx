@@ -47,7 +47,7 @@ export const TitleForm = ({
 
     const {isSubmitting, isValid} = form.formState;
 
-    const onsubmit = async (values: z.infer<typeof formSchema>) => {
+    const onSubmit = async (values: z.infer<typeof formSchema>) => {
         try {
             await axios.patch(`/api/courses/${courseId}`, values);
             toast.success("Course updated succesfully");
@@ -77,13 +77,13 @@ export const TitleForm = ({
             </div>
             {!isEditing && (
                 <p className="text-sm mt-2">
-                    {initialData?.title ?? 'No title provided'}
+                    {initialData.title ?? 'No title provided'}
                 </p>
             )}
             {isEditing && (
                 <Form {...form}>
                     <form 
-                        onSubmit={form.handleSubmit(onsubmit)}
+                        onSubmit={form.handleSubmit(onSubmit)}
                         className="space-y-4 mt-4"
                     >
                         <FormField 
@@ -94,9 +94,12 @@ export const TitleForm = ({
                                     <FormControl>
                                         <Input 
                                             disabled={isSubmitting}
+                                            placeholder="e.g 'Computer Science Fundamentals 101'"
+                                            {...field}
                                         />
                                     </FormControl>
-                                </FormItem>
+                                    <FormMessage/>
+                                </FormItem> 
                             )}
                         />
                         <div className="flex items-center gap-x-2">
